@@ -3,22 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* CycleTracksAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CycleTracksAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* CVilleRidesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* CVilleRidesAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		1FA09749146B37A9003DD3DA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FA09748146B37A9003DD3DA /* MainStoryboard.storyboard */; };
+		1FC17A811469A001007290D7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C19AF1467603700B8DD46 /* Default.png */; };
+		1FC17A831469A015007290D7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F3C19B11467605A00B8DD46 /* Default@2x.png */; };
+		1FE298BE15016EB4002F0302 /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FE298BD15016EB4002F0302 /* icon_512x512.png */; };
+		1FFFEDBA150158A100D65B65 /* splash320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFEDB9150158A100D65B65 /* splash320x480.png */; };
+		1FFFEDBF150158CC00D65B65 /* icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFEDBC150158CB00D65B65 /* icon_57x57.png */; };
+		1FFFEDC0150158CC00D65B65 /* icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFEDBD150158CB00D65B65 /* icon_114x114.png */; };
+		1FFFEDC1150158CC00D65B65 /* splash640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FFFEDBE150158CC00D65B65 /* splash640x960.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28C3AD8A0F43EF2300507BA6 /* CycleTracks.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 28C3AD890F43EF2300507BA6 /* CycleTracks.xcdatamodel */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		3F32EFFB136A4BD3002FDB5B /* agreement.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3F32EFFA136A4BD3002FDB5B /* agreement.rtf */; };
+		3F8D53BB1352B3F200382F39 /* AgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8D53B91352B3F200382F39 /* AgreementView.m */; };
+		3FB63C3E135379B600E886D5 /* agreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3FB63C3D135379B600E886D5 /* agreement.txt */; };
+		3FB63C4213537E2700E886D5 /* PopupAgreementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB63C4013537E2700E886D5 /* PopupAgreementView.m */; };
 		6405FB46107E9038004B453B /* GreenCheckMark3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6405FB45107E9038004B453B /* GreenCheckMark3.png */; };
 		6411996210683D7500C201F0 /* RecordTripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6411996110683D7500C201F0 /* RecordTripViewController.m */; };
 		6411996D10683DCD00C201F0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6411996C10683DCD00C201F0 /* CoreLocation.framework */; };
 		641199B2106851AA00C201F0 /* SavedTripsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641199B1106851AA00C201F0 /* SavedTripsViewController.m */; };
-		64119A9C1068665B00C201F0 /* TripPurposePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64119A9B1068665B00C201F0 /* TripPurposePicker.xib */; };
 		64119AAD1068672100C201F0 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64119AAA1068672100C201F0 /* CustomView.m */; };
 		64119AAE1068672100C201F0 /* CustomPickerDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 64119AAC1068672100C201F0 /* CustomPickerDataSource.m */; };
 		64119ABF10689ED800C201F0 /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64119ABE10689ED800C201F0 /* PickerViewController.m */; };
@@ -36,14 +47,11 @@
 		6411A195106A90E400C201F0 /* work-related.tif in Resources */ = {isa = PBXBuildFile; fileRef = 6411A18D106A90E400C201F0 /* work-related.tif */; };
 		6411A199106A90FB00C201F0 /* tabbar_record.png in Resources */ = {isa = PBXBuildFile; fileRef = 6411A197106A90FB00C201F0 /* tabbar_record.png */; };
 		6411A19A106A90FB00C201F0 /* tabbar_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 6411A198106A90FB00C201F0 /* tabbar_view.png */; };
-		64210F29113508B800415F1A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64210F28113508B800415F1A /* MainWindow.xib */; };
-		64210F5411350AE200415F1A /* RecordNewTrip.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64210F5311350AE200415F1A /* RecordNewTrip.xib */; };
 		64210F6111350C8500415F1A /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64210F6011350C8500415F1A /* AboutViewController.m */; };
 		642394ED108D402300DF6325 /* LockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 642394EC108D402300DF6325 /* LockIcon.png */; };
 		642394EF108D405000DF6325 /* UnlockIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 642394EE108D405000DF6325 /* UnlockIcon.png */; };
 		6426476E1073FEC300E43DEF /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6426476D1073FEC300E43DEF /* ReminderManager.m */; };
 		642647FD107435A200E43DEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642647FC107435A200E43DEF /* AudioToolbox.framework */; };
-		642F150C1071D9910050BCB9 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 642F14791071D3F10050BCB9 /* MapViewController.xib */; };
 		642F151C1071D9DD0050BCB9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642F151B1071D9DD0050BCB9 /* MapKit.framework */; };
 		642F15271071DA700050BCB9 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 642F15261071DA700050BCB9 /* MapViewController.m */; };
 		642F161D1071ED1C0050BCB9 /* MapCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 642F161C1071ED1C0050BCB9 /* MapCoord.m */; };
@@ -59,7 +67,6 @@
 		64577E29106DC2FD003ACBFD /* dist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64577E28106DC2FD003ACBFD /* dist.plist */; };
 		64580EFB107581EC0075DABD /* exclamation_point.png in Resources */ = {isa = PBXBuildFile; fileRef = 64580EFA107581EC0075DABD /* exclamation_point.png */; };
 		64580F50107589450075DABD /* GreenCheckMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 64580F4F107589450075DABD /* GreenCheckMark.png */; };
-		64580FF31076B32C0075DABD /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 64580FF21076B32C0075DABD /* Default.png */; };
 		6458107E107A83C80075DABD /* GreenCheckMark2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6458107D107A83C80075DABD /* GreenCheckMark2.png */; };
 		6458114E107AA4D30075DABD /* bicycle-bell-normalized.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 6458114D107AA4D30075DABD /* bicycle-bell-normalized.aiff */; };
 		645E4EDC1200C1C800EFF0E6 /* LoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 645E4EDB1200C1C800EFF0E6 /* LoadingView.m */; };
@@ -69,7 +76,6 @@
 		64AF2EE510714BC900DDDF07 /* start_button_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 64AF2EE110714BC900DDDF07 /* start_button_selected.png */; };
 		64BEA66B1145857E00BF8E94 /* tabbar_instructions.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BEA6691145857E00BF8E94 /* tabbar_instructions.png */; };
 		64BEA66C1145857E00BF8E94 /* tabbar_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 64BEA66A1145857E00BF8E94 /* tabbar_settings.png */; };
-		64C8D40311386B26008BCADE /* RecordMap.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C8D40211386B26008BCADE /* RecordMap.xib */; };
 		64C8D40511386C9F008BCADE /* LCD-screen-288x126.png in Resources */ = {isa = PBXBuildFile; fileRef = 64C8D40411386C9F008BCADE /* LCD-screen-288x126.png */; };
 		64C8D41C11387949008BCADE /* record-map-frame-288x141.png in Resources */ = {isa = PBXBuildFile; fileRef = 64C8D41B11387949008BCADE /* record-map-frame-288x141.png */; };
 		64C8D433113889B1008BCADE /* settings_icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 64C8D432113889B1008BCADE /* settings_icon2.png */; };
@@ -94,28 +100,41 @@
 		64F8268D106B5D24001413F8 /* orangeslide.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F82688106B5D24001413F8 /* orangeslide.png */; };
 		64F8268E106B5D24001413F8 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F82689106B5D24001413F8 /* whiteButton.png */; };
 		64F826CC106B5F3E001413F8 /* ArrowButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 64F826CB106B5F3E001413F8 /* ArrowButton.png */; };
-		64FCC5B411352242000FA1B6 /* PersonalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FCC5B311352242000FA1B6 /* PersonalInfo.xib */; };
 		64FCC5B811352371000FA1B6 /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 64FCC5B711352371000FA1B6 /* 20-gear2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* CycleTracksAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTracksAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* CycleTracksAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CycleTracksAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* CycleTracks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CycleTracks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D3623240D0F684500981E51 /* CVilleRidesAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CVilleRidesAppDelegate.h; path = "/Users/jeff/iOS Projects/CVille Bike mApp/Classes/CVilleRidesAppDelegate.h"; sourceTree = "<absolute>"; };
+		1D3623250D0F684500981E51 /* CVilleRidesAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CVilleRidesAppDelegate.m; path = "/Users/jeff/iOS Projects/CVille Bike mApp/Classes/CVilleRidesAppDelegate.m"; sourceTree = "<absolute>"; };
+		1D6058910D05DD3D006BFB54 /* CVille Bike mApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CVille Bike mApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F3C19AF1467603700B8DD46 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		1F3C19B11467605A00B8DD46 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		1FA09748146B37A9003DD3DA /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		1FBAEDD01475C25100C5E311 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		1FE298BD15016EB4002F0302 /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512x512.png; sourceTree = "<group>"; };
+		1FFFEDB9150158A100D65B65 /* splash320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash320x480.png; sourceTree = "<group>"; };
+		1FFFEDBC150158CB00D65B65 /* icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_57x57.png; sourceTree = "<group>"; };
+		1FFFEDBD150158CB00D65B65 /* icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_114x114.png; sourceTree = "<group>"; };
+		1FFFEDBE150158CC00D65B65 /* splash640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash640x960.png; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28C3AD890F43EF2300507BA6 /* CycleTracks.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = CycleTracks.xcdatamodel; sourceTree = "<group>"; };
+		28C3AD890F43EF2300507BA6 /* CycleTracks.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; fileEncoding = 4; path = CycleTracks.xcdatamodel; sourceTree = "<group>"; };
 		28D801B30F44B63D00FB423F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* CycleTracks_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleTracks_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* CVille Bike mApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CVille Bike mApp_Prefix.pch"; sourceTree = "<group>"; };
+		3F32EFFA136A4BD3002FDB5B /* agreement.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = agreement.rtf; sourceTree = "<group>"; };
+		3F8D53B81352B3F200382F39 /* AgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementView.h; sourceTree = "<group>"; };
+		3F8D53B91352B3F200382F39 /* AgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementView.m; sourceTree = "<group>"; };
+		3FB63C3D135379B600E886D5 /* agreement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agreement.txt; sourceTree = "<group>"; };
+		3FB63C3F13537E2600E886D5 /* PopupAgreementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupAgreementView.h; sourceTree = "<group>"; };
+		3FB63C4013537E2700E886D5 /* PopupAgreementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupAgreementView.m; sourceTree = "<group>"; };
 		6405FB45107E9038004B453B /* GreenCheckMark3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark3.png; sourceTree = "<group>"; };
 		6411996010683D7500C201F0 /* RecordTripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTripViewController.h; sourceTree = "<group>"; };
 		6411996110683D7500C201F0 /* RecordTripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTripViewController.m; sourceTree = "<group>"; };
 		6411996C10683DCD00C201F0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		641199B0106851AA00C201F0 /* SavedTripsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedTripsViewController.h; sourceTree = "<group>"; };
 		641199B1106851AA00C201F0 /* SavedTripsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedTripsViewController.m; sourceTree = "<group>"; };
-		64119A9B1068665B00C201F0 /* TripPurposePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripPurposePicker.xib; sourceTree = "<group>"; };
 		64119AA91068672100C201F0 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		64119AAA1068672100C201F0 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
 		64119AAB1068672100C201F0 /* CustomPickerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPickerDataSource.h; sourceTree = "<group>"; };
@@ -139,8 +158,6 @@
 		6411A18D106A90E400C201F0 /* work-related.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "work-related.tif"; sourceTree = "<group>"; };
 		6411A197106A90FB00C201F0 /* tabbar_record.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_record.png; sourceTree = "<group>"; };
 		6411A198106A90FB00C201F0 /* tabbar_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_view.png; sourceTree = "<group>"; };
-		64210F28113508B800415F1A /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		64210F5311350AE200415F1A /* RecordNewTrip.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordNewTrip.xib; sourceTree = "<group>"; };
 		64210F5F11350C8500415F1A /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		64210F6011350C8500415F1A /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		642394EC108D402300DF6325 /* LockIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LockIcon.png; sourceTree = "<group>"; };
@@ -148,7 +165,6 @@
 		6426476C1073FEC300E43DEF /* ReminderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderManager.h; sourceTree = "<group>"; };
 		6426476D1073FEC300E43DEF /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
 		642647FC107435A200E43DEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		642F14791071D3F10050BCB9 /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		642F151B1071D9DD0050BCB9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		642F15251071DA700050BCB9 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		642F15261071DA700050BCB9 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -170,7 +186,6 @@
 		64577E28106DC2FD003ACBFD /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
 		64580EFA107581EC0075DABD /* exclamation_point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclamation_point.png; sourceTree = "<group>"; };
 		64580F4F107589450075DABD /* GreenCheckMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark.png; sourceTree = "<group>"; };
-		64580FF21076B32C0075DABD /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		6458107D107A83C80075DABD /* GreenCheckMark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GreenCheckMark2.png; sourceTree = "<group>"; };
 		6458114D107AA4D30075DABD /* bicycle-bell-normalized.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "bicycle-bell-normalized.aiff"; sourceTree = "<group>"; };
 		64581198107AC1080075DABD /* RecordingInProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingInProgressDelegate.h; sourceTree = "<group>"; };
@@ -182,7 +197,6 @@
 		64AF2EE110714BC900DDDF07 /* start_button_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_button_selected.png; sourceTree = "<group>"; };
 		64BEA6691145857E00BF8E94 /* tabbar_instructions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_instructions.png; sourceTree = "<group>"; };
 		64BEA66A1145857E00BF8E94 /* tabbar_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_settings.png; sourceTree = "<group>"; };
-		64C8D40211386B26008BCADE /* RecordMap.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordMap.xib; sourceTree = "<group>"; };
 		64C8D40411386C9F008BCADE /* LCD-screen-288x126.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LCD-screen-288x126.png"; sourceTree = "<group>"; };
 		64C8D41B11387949008BCADE /* record-map-frame-288x141.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "record-map-frame-288x141.png"; sourceTree = "<group>"; };
 		64C8D432113889B1008BCADE /* settings_icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings_icon2.png; sourceTree = "<group>"; };
@@ -218,9 +232,8 @@
 		64F82688106B5D24001413F8 /* orangeslide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeslide.png; sourceTree = "<group>"; };
 		64F82689106B5D24001413F8 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
 		64F826CB106B5F3E001413F8 /* ArrowButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArrowButton.png; sourceTree = "<group>"; };
-		64FCC5B311352242000FA1B6 /* PersonalInfo.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfo.xib; sourceTree = "<group>"; };
 		64FCC5B711352371000FA1B6 /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "20-gear2.png"; path = "../20-gear2.png"; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* CycleTracks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CycleTracks-Info.plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* CVille Bike mApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CVille Bike mApp-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,13 +259,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				645E4EDA1200C1C800EFF0E6 /* LoadingView.h */,
-				645E4EDB1200C1C800EFF0E6 /* LoadingView.m */,
-				6433E5D3106D66EA00C27387 /* ActivityIndicatorDelegate.h */,
 				64210F5F11350C8500415F1A /* AboutViewController.h */,
 				64210F6011350C8500415F1A /* AboutViewController.m */,
-				1D3623240D0F684500981E51 /* CycleTracksAppDelegate.h */,
-				1D3623250D0F684500981E51 /* CycleTracksAppDelegate.m */,
+				6433E5D3106D66EA00C27387 /* ActivityIndicatorDelegate.h */,
+				3F8D53B81352B3F200382F39 /* AgreementView.h */,
+				3F8D53B91352B3F200382F39 /* AgreementView.m */,
+				1D3623240D0F684500981E51 /* CVilleRidesAppDelegate.h */,
+				1D3623250D0F684500981E51 /* CVilleRidesAppDelegate.m */,
+				645E4EDA1200C1C800EFF0E6 /* LoadingView.h */,
+				645E4EDB1200C1C800EFF0E6 /* LoadingView.m */,
 				642F161B1071ED1C0050BCB9 /* MapCoord.h */,
 				642F161C1071ED1C0050BCB9 /* MapCoord.m */,
 				642F15251071DA700050BCB9 /* MapViewController.h */,
@@ -262,6 +277,8 @@
 				64F824E5106AFFA4001413F8 /* PersonalInfoViewController.m */,
 				64119ABD10689ED800C201F0 /* PickerViewController.h */,
 				64119ABE10689ED800C201F0 /* PickerViewController.m */,
+				3FB63C3F13537E2600E886D5 /* PopupAgreementView.h */,
+				3FB63C4013537E2700E886D5 /* PopupAgreementView.m */,
 				64581198107AC1080075DABD /* RecordingInProgressDelegate.h */,
 				6411996010683D7500C201F0 /* RecordTripViewController.h */,
 				6411996110683D7500C201F0 /* RecordTripViewController.m */,
@@ -281,7 +298,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* CycleTracks.app */,
+				1D6058910D05DD3D006BFB54 /* CVille Bike mApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +306,14 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				1FE298BD15016EB4002F0302 /* icon_512x512.png */,
+				1FFFEDBC150158CB00D65B65 /* icon_57x57.png */,
+				1FFFEDBD150158CB00D65B65 /* icon_114x114.png */,
+				1FFFEDBE150158CC00D65B65 /* splash640x960.png */,
+				1FFFEDB9150158A100D65B65 /* splash320x480.png */,
+				1FA09748146B37A9003DD3DA /* MainStoryboard.storyboard */,
+				1F3C19B11467605A00B8DD46 /* Default@2x.png */,
+				1F3C19AF1467603700B8DD46 /* Default.png */,
 				64577E28106DC2FD003ACBFD /* dist.plist */,
 				64F8239A106AB3E1001413F8 /* TouchJSON */,
 				64119AA81068672100C201F0 /* Trip Purpose data source */,
@@ -306,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				64F823B6106AB402001413F8 /* constants.h */,
-				32CA4F630368D1EE00C91783 /* CycleTracks_Prefix.pch */,
+				32CA4F630368D1EE00C91783 /* CVille Bike mApp_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
 			name = "Other Sources";
@@ -319,13 +344,9 @@
 				6411A185106A90E400C201F0 /* TripPurposePickerIcons v2 */,
 				6411A16A106A05DE00C201F0 /* Images */,
 				6458114D107AA4D30075DABD /* bicycle-bell-normalized.aiff */,
-				8D1107310486CEB800E47090 /* CycleTracks-Info.plist */,
-				64210F28113508B800415F1A /* MainWindow.xib */,
-				642F14791071D3F10050BCB9 /* MapViewController.xib */,
-				64C8D40211386B26008BCADE /* RecordMap.xib */,
-				64210F5311350AE200415F1A /* RecordNewTrip.xib */,
-				64119A9B1068665B00C201F0 /* TripPurposePicker.xib */,
-				64FCC5B311352242000FA1B6 /* PersonalInfo.xib */,
+				8D1107310486CEB800E47090 /* CVille Bike mApp-Info.plist */,
+				3F32EFFA136A4BD3002FDB5B /* agreement.rtf */,
+				3FB63C3D135379B600E886D5 /* agreement.txt */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -342,6 +363,7 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
 				64ED1620112F364200E617E1 /* QuartzCore.framework */,
+				1FBAEDD01475C25100C5E311 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -383,7 +405,6 @@
 				642394EC108D402300DF6325 /* LockIcon.png */,
 				6405FB45107E9038004B453B /* GreenCheckMark3.png */,
 				6458107D107A83C80075DABD /* GreenCheckMark2.png */,
-				64580FF21076B32C0075DABD /* Default.png */,
 				64580F4F107589450075DABD /* GreenCheckMark.png */,
 				64580EFA107581EC0075DABD /* exclamation_point.png */,
 				642F17E610731F7C0050BCB9 /* MapCoord.png */,
@@ -487,9 +508,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* CycleTracks */ = {
+		1D6058900D05DD3D006BFB54 /* CVille Bike mApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CycleTracks" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CVille Bike mApp" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -499,9 +520,9 @@
 			);
 			dependencies = (
 			);
-			name = CycleTracks;
+			name = "CVille Bike mApp";
 			productName = CycleTracks;
-			productReference = 1D6058910D05DD3D006BFB54 /* CycleTracks.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* CVille Bike mApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -509,14 +530,25 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CycleTracks" */;
-			compatibilityVersion = "Xcode 3.1";
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CVille Bike mApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* CycleTracks */,
+				1D6058900D05DD3D006BFB54 /* CVille Bike mApp */,
 			);
 		};
 /* End PBXProject section */
@@ -526,7 +558,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64119A9C1068665B00C201F0 /* TripPurposePicker.xib in Resources */,
 				6411A16C106A05FE00C201F0 /* LargeCounter.png in Resources */,
 				6411A18E106A90E400C201F0 /* commute.tif in Resources */,
 				6411A18F106A90E400C201F0 /* errands.tif in Resources */,
@@ -555,11 +586,9 @@
 				64AF2EE310714BC900DDDF07 /* save_button_selected.png in Resources */,
 				64AF2EE410714BC900DDDF07 /* start_button.png in Resources */,
 				64AF2EE510714BC900DDDF07 /* start_button_selected.png in Resources */,
-				642F150C1071D9910050BCB9 /* MapViewController.xib in Resources */,
 				642F17E710731F7C0050BCB9 /* MapCoord.png in Resources */,
 				64580EFB107581EC0075DABD /* exclamation_point.png in Resources */,
 				64580F50107589450075DABD /* GreenCheckMark.png in Resources */,
-				64580FF31076B32C0075DABD /* Default.png in Resources */,
 				6458107E107A83C80075DABD /* GreenCheckMark2.png in Resources */,
 				6458114E107AA4D30075DABD /* bicycle-bell-normalized.aiff in Resources */,
 				6405FB46107E9038004B453B /* GreenCheckMark3.png in Resources */,
@@ -569,16 +598,22 @@
 				64D31CAA108E735B00D52130 /* lock_button1.png in Resources */,
 				64D31CAB108E735B00D52130 /* lock_button2.png in Resources */,
 				64D31CAC108E735B00D52130 /* lock_button_fpo.png in Resources */,
-				64210F29113508B800415F1A /* MainWindow.xib in Resources */,
-				64210F5411350AE200415F1A /* RecordNewTrip.xib in Resources */,
-				64FCC5B411352242000FA1B6 /* PersonalInfo.xib in Resources */,
 				64FCC5B811352371000FA1B6 /* 20-gear2.png in Resources */,
-				64C8D40311386B26008BCADE /* RecordMap.xib in Resources */,
 				64C8D40511386C9F008BCADE /* LCD-screen-288x126.png in Resources */,
 				64C8D41C11387949008BCADE /* record-map-frame-288x141.png in Resources */,
 				64C8D433113889B1008BCADE /* settings_icon2.png in Resources */,
 				64BEA66B1145857E00BF8E94 /* tabbar_instructions.png in Resources */,
 				64BEA66C1145857E00BF8E94 /* tabbar_settings.png in Resources */,
+				3FB63C3E135379B600E886D5 /* agreement.txt in Resources */,
+				3F32EFFB136A4BD3002FDB5B /* agreement.rtf in Resources */,
+				1FC17A811469A001007290D7 /* Default.png in Resources */,
+				1FC17A831469A015007290D7 /* Default@2x.png in Resources */,
+				1FA09749146B37A9003DD3DA /* MainStoryboard.storyboard in Resources */,
+				1FFFEDBA150158A100D65B65 /* splash320x480.png in Resources */,
+				1FFFEDBF150158CC00D65B65 /* icon_57x57.png in Resources */,
+				1FFFEDC0150158CC00D65B65 /* icon_114x114.png in Resources */,
+				1FFFEDC1150158CC00D65B65 /* splash640x960.png in Resources */,
+				1FE298BE15016EB4002F0302 /* icon_512x512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* CycleTracksAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* CVilleRidesAppDelegate.m in Sources */,
 				28C3AD8A0F43EF2300507BA6 /* CycleTracks.xcdatamodel in Sources */,
 				6411996210683D7500C201F0 /* RecordTripViewController.m in Sources */,
 				641199B2106851AA00C201F0 /* SavedTripsViewController.m in Sources */,
@@ -616,6 +651,8 @@
 				6426476E1073FEC300E43DEF /* ReminderManager.m in Sources */,
 				64210F6111350C8500415F1A /* AboutViewController.m in Sources */,
 				645E4EDC1200C1C800EFF0E6 /* LoadingView.m in Sources */,
+				3F8D53BB1352B3F200382F39 /* AgreementView.m in Sources */,
+				3FB63C4213537E2700E886D5 /* PopupAgreementView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,18 +663,25 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Jefferson Planning District Commission";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CycleTracks_Prefix.pch;
-				INFOPLIST_FILE = "CycleTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = CycleTracks;
+				GCC_PREFIX_HEADER = "CVille Bike mApp_Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CVille Bike mApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -645,16 +689,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Jefferson Planning District Commission";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CycleTracks_Prefix.pch;
-				INFOPLIST_FILE = "CycleTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 2.2.1;
-				PRODUCT_NAME = CycleTracks;
+				GCC_PREFIX_HEADER = "CVille Bike mApp_Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CVille Bike mApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -662,12 +712,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "F2C589B8-496A-44A7-A083-830956B4299F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Distribution;
 		};
@@ -675,16 +730,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Jefferson Planning District Commission";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CycleTracks_Prefix.pch;
-				INFOPLIST_FILE = "CycleTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = CycleTracks;
+				GCC_PREFIX_HEADER = "CVille Bike mApp_Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CVille Bike mApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Distribution;
 		};
@@ -693,13 +755,17 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: mopimp productions";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "50065992-A084-4871-A0E0-4871B4BD3D7C";
-				SDKROOT = iphoneos3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "F2C589B8-496A-44A7-A083-830956B4299F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Beta;
 		};
@@ -707,19 +773,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Jefferson Planning District Commission";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CycleTracks_Prefix.pch;
-				INFOPLIST_FILE = "CycleTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = CycleTracks;
+				GCC_PREFIX_HEADER = "CVille Bike mApp_Prefix.pch";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CVille Bike mApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Beta;
 		};
@@ -727,12 +800,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "F2C589B8-496A-44A7-A083-830956B4299F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = "Release Beta";
 		};
@@ -740,17 +818,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Thomas Jefferson Planning District Commission";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = CycleTracks_Prefix.pch;
-				INFOPLIST_FILE = "CycleTracks-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
-				PRODUCT_NAME = CycleTracks;
+				GCC_PREFIX_HEADER = "CVille Bike mApp_Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "CVille Bike mApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = "Release Beta";
 		};
@@ -758,12 +842,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "F2C589B8-496A-44A7-A083-830956B4299F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -771,19 +860,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Thomas Jefferson Planning District Commission";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "CVille Bike mApp";
+				PROVISIONING_PROFILE = "F2C589B8-496A-44A7-A083-830956B4299F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CycleTracks" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "CVille Bike mApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -795,7 +889,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CycleTracks" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "CVille Bike mApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

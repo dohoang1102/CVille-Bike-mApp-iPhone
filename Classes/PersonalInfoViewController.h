@@ -34,38 +34,31 @@
 
 @class User;
 
+@interface PersonalInfoViewController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate>
 
-@interface PersonalInfoViewController : UITableViewController <UITextFieldDelegate>
-{
-	id <PersonalInfoDelegate> delegate;
-	NSManagedObjectContext *managedObjectContext;
-	User *user;
+@property (nonatomic, strong) id <PersonalInfoDelegate> delegate;
 
-	UITextField *age;
-	UITextField *email;
-	UITextField *gender;
-	UITextField *homeZIP;
-	UITextField *workZIP;
-	UITextField *schoolZIP;
-	
-	NSNumber	*cyclingFreq;
-}
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) User *user;
 
+@property (nonatomic, strong) UITextField	*age;
+@property (nonatomic, strong) UITextField	*email;
+@property (nonatomic, strong) UITextField	*gender;
+@property (nonatomic, strong) UITextField	*homeZIP;
+@property (nonatomic, strong) UITextField	*workZIP;
+@property (nonatomic, strong) UITextField	*schoolZIP;
+@property (nonatomic, strong) UITextField	*name;
+@property (nonatomic, strong) UISegmentedControl	*entersurveyswitch;
+@property (nonatomic, strong) UISegmentedControl	*owncarswitch;
+@property (nonatomic, strong) UISegmentedControl	*liveoncampusswitch;
+@property (nonatomic, strong) NSNumber		*cyclingFreq;
 
-@property (nonatomic, retain) id <PersonalInfoDelegate> delegate;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain) User *user;
+//New properties
+@property (nonatomic, strong) UITextField *cyclingLevel;
+@property (nonatomic, strong) UISegmentedControl *uvaAffiliated;
+@property (nonatomic, strong) UITextField	*uvaClassification;
 
-@property (nonatomic, retain) UITextField	*age;
-@property (nonatomic, retain) UITextField	*email;
-@property (nonatomic, retain) UITextField	*gender;
-@property (nonatomic, retain) UITextField	*homeZIP;
-@property (nonatomic, retain) UITextField	*workZIP;
-@property (nonatomic, retain) UITextField	*schoolZIP;
-
-@property (nonatomic, retain) NSNumber		*cyclingFreq;
-
-//- (void)initTripManager:(TripManager*)manager;
+//- (void)initTripManager:(TripManager*)manager;  
 
 // DEPRECATED
 - (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;

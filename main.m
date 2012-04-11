@@ -29,11 +29,20 @@
 //	e-mail Billy Charlton at the SFCTA <billy.charlton@sfcta.org>
 
 #import <UIKit/UIKit.h>
+#import "CVilleRidesAppDelegate.h"
 
 int main(int argc, char *argv[]) {
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+    @autoreleasepool {
+       // int retVal = UIApplicationMain(argc, argv, nil, nil);
+        int retVal;
+        @try{ 
+            retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([CVilleRidesAppDelegate class]));
+        } @catch (NSException* e) {
+            NSLog(@"Exception - %@",[e description]);
+            NSLog(@"Stack trace - %@",[e callStackSymbols]);
+            exit(EXIT_FAILURE);
+        }
+        return retVal;
+    }
 }

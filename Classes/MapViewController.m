@@ -44,7 +44,11 @@
 
 @implementation MapViewController
 
-@synthesize doneButton, flipButton, infoView, trip;
+@synthesize mapView = _mapView;
+@synthesize doneButton = _doneButton;
+@synthesize flipButton = _flipButton;
+@synthesize infoView = _infoView;
+@synthesize trip = _trip;
 
 
 /*
@@ -57,14 +61,14 @@
 }
 */
 
-- (id)initWithTrip:(Trip *)_trip
+- (id)initWithTrip:(Trip *)tripIn
 {
     //if (self = [super init]) {
 	if (self = [super initWithNibName:@"MapViewController" bundle:nil]) {
 		NSLog(@"MapViewController initWithTrip");
-		self.trip = _trip;
-		mapView.delegate = self;
-    }
+		self.trip = tripIn;
+		self.mapView.delegate = self;
+   }
     return self;
 }
 
@@ -83,30 +87,30 @@
 	[UIView beginAnimations:nil context:nil];
 	[UIView setAnimationDuration:0.75];
 	
-	[UIView setAnimationTransition:([infoView superview] ?
+	[UIView setAnimationTransition:([self.infoView superview] ?
 									UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
 						   forView:self.view cache:YES];
 	
-	if ([infoView superview])
-		[infoView removeFromSuperview];
+	if ([self.infoView superview])
+		[self.infoView removeFromSuperview];
 	else
-		[self.view addSubview:infoView];
+		[self.view addSubview:self.infoView];
 	
 	[UIView commitAnimations];
 	
 	// adjust our done/info buttons accordingly
-	if ([infoView superview] == self.view)
-		self.navigationItem.rightBarButtonItem = doneButton;
+	if ([self.infoView superview] == self.view)
+		self.navigationItem.rightBarButtonItem = self.doneButton;
 	else
-		self.navigationItem.rightBarButtonItem = flipButton;
+		self.navigationItem.rightBarButtonItem = self.flipButton;
 }
 
 
 - (void)initInfoView
 {
-	infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,0,320,460)];
-	infoView.alpha				= kInfoViewAlpha;
-	infoView.backgroundColor	= [UIColor blackColor];
+	self.infoView					= [[UIView alloc] initWithFrame:CGRectMake(0,0,320,460)];
+	self.infoView.alpha				= kInfoViewAlpha;
+	self.infoView.backgroundColor	= [UIColor blackColor];
 	
 	UILabel *notesHeader		= [[UILabel alloc] initWithFrame:CGRectMake(9,85,160,25)];
 	notesHeader.backgroundColor = [UIColor clearColor];
@@ -114,15 +118,15 @@
 	notesHeader.opaque			= NO;
 	notesHeader.text			= @"Trip Notes";
 	notesHeader.textColor		= [UIColor whiteColor];
-	[infoView addSubview:notesHeader];
+	[self.infoView addSubview:notesHeader];
 	
 	UITextView *notesText		= [[UITextView alloc] initWithFrame:CGRectMake(0,110,320,200)];
 	notesText.backgroundColor	= [UIColor clearColor];
 	notesText.editable			= NO;
 	notesText.font				= [UIFont systemFontOfSize:16.0];
-	notesText.text				= trip.notes;
+	notesText.text				= self.trip.notes;
 	notesText.textColor			= [UIColor whiteColor];
-	[infoView addSubview:notesText];
+	[self.infoView addSubview:notesText];
 }
 
 
@@ -132,7 +136,7 @@
     [super viewDidLoad];
 	self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
 
-	if ( trip )
+	if (self.trip )
 	{
 		// format date as a string
 		static NSDateFormatter *dateFormatter = nil;
@@ -150,31 +154,31 @@
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
 		NSDate *fauxDate = [inputFormatter dateFromString:@"00:00:00"];
 		[inputFormatter setDateFormat:@"HH:mm:ss"];
-		NSDate *outputDate = [[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[trip.duration doubleValue] 
+		NSDate *outputDate = [[NSDate alloc] initWithTimeInterval:(NSTimeInterval)[self.trip.duration doubleValue] 
 														sinceDate:fauxDate];
 
-		double mph = ( [trip.distance doubleValue] / 1609.344 ) / ( [trip.duration doubleValue] / 3600. );
+		double mph = ( [self.trip.distance doubleValue] / 1609.344 ) / ( [self.trip.duration doubleValue] / 3600. );
 		
 		self.navigationItem.prompt = [NSString stringWithFormat:@"elapsed: %@ ~ %@",
  									  [inputFormatter stringFromDate:outputDate],
-									  [dateFormatter stringFromDate:[trip start]]];
+									  [dateFormatter stringFromDate:[self.trip start]]];
 
 		self.title = [NSString stringWithFormat:@"%.1f mi ~ %.1f mph",
-					  [trip.distance doubleValue] / 1609.344, 
+					  [self.trip.distance doubleValue] / 1609.344, 
 					  mph ];
 		
 		//self.title = trip.purpose;
 		
 		// only add info view for trips with non-null notes
-		if ( trip.notes )
+		if ( self.trip.notes )
 		{
-			doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(infoAction:)];
+			self.doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(infoAction:)];
 			
 			UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 			infoButton.showsTouchWhenHighlighted = YES;
 			[infoButton addTarget:self action:@selector(infoAction:) forControlEvents:UIControlEventTouchUpInside];
-			flipButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-			self.navigationItem.rightBarButtonItem = flipButton;
+			self.flipButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+			self.navigationItem.rightBarButtonItem = self.flipButton;
 			
 			[self initInfoView];
 		}
@@ -189,11 +193,11 @@
 		
 		// filter coords by hAccuracy
 		NSPredicate *filterByAccuracy	= [NSPredicate predicateWithFormat:@"hAccuracy < 100.0"];
-		NSArray		*filteredCoords		= [[trip.coords allObjects] filteredArrayUsingPredicate:filterByAccuracy];
+		NSArray		*filteredCoords		= [[self.trip.coords allObjects] filteredArrayUsingPredicate:filterByAccuracy];
 		NSLog(@"count of filtered coords = %d", [filteredCoords count]);
 		
 		// sort filtered coords by recorded date
-		NSSortDescriptor *sortByDate	= [[[NSSortDescriptor alloc] initWithKey:@"recorded" ascending:YES] autorelease];
+		NSSortDescriptor *sortByDate	= [[NSSortDescriptor alloc] initWithKey:@"recorded" ascending:YES];
 		NSArray		*sortDescriptors	= [NSArray arrayWithObjects:sortByDate, nil];
 		NSArray		*sortedCoords		= [filteredCoords sortedArrayUsingDescriptors:sortDescriptors];
 		
@@ -253,7 +257,7 @@
 						maxLon = coord.longitude;
 				}				
 				
-				[mapView addAnnotation:pin];
+				[self.mapView addAnnotation:pin];
 				count++;
 			}
 			
@@ -264,7 +268,7 @@
 		NSLog(@"added %d unique GPS coordinates of %d to map", count, [sortedCoords count]);
 		
 		// add end point as a pin annotation
-		if ( last = [sortedCoords lastObject] )
+		if ( (last = [sortedCoords lastObject]) )
 		{
 			pin.last = YES;
 			pin.title = @"End";
@@ -296,20 +300,20 @@
 											[minLon doubleValue] + lonDelta / 2 }, 
 										  { latDelta, 
 											lonDelta } };
-			[mapView setRegion:region animated:NO];
+			[self.mapView setRegion:region animated:NO];
 		}
 		else
 		{
 			// init map region to San Francisco
 			MKCoordinateRegion region = { { 37.7620, -122.4350 }, { 0.10825, 0.10825 } };
-			[mapView setRegion:region animated:NO];
+			[self.mapView setRegion:region animated:NO];
 		}
 	}
 	else
 	{
 		// error: init map region to San Francisco
 		MKCoordinateRegion region = { { 37.7620, -122.4350 }, { 0.10825, 0.10825 } };
-		[mapView setRegion:region animated:NO];
+		[self.mapView setRegion:region animated:NO];
 	}
 	
 	LoadingView *loading = (LoadingView*)[self.parentViewController.view viewWithTag:909];
@@ -339,13 +343,6 @@
 }
 
 
-- (void)dealloc {
-	[doneButton release];
-	[flipButton release];
-	[mapView release];
-	[trip release];
-    [super dealloc];
-}
 
 
 #pragma mark MKMapViewDelegate methods
@@ -389,14 +386,13 @@
 		if ( [(MapCoord*)annotation first] )
 		{
 			// Try to dequeue an existing pin view first.
-			MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView
+			MKPinAnnotationView* pinView = (MKPinAnnotationView*)[self.mapView
 																  dequeueReusableAnnotationViewWithIdentifier:@"FirstCoord"];
 			
 			if ( !pinView )
 			{
 				// If an existing pin view was not available, create one
-				pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FirstCoord"]
-						   autorelease];
+				pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"FirstCoord"];
 				
 				pinView.animatesDrop = YES;
 				pinView.canShowCallout = YES;
@@ -408,14 +404,13 @@
 		else if ( [(MapCoord*)annotation last] )
 		{
 			// Try to dequeue an existing pin view first.
-			MKPinAnnotationView* pinView = (MKPinAnnotationView*)[mapView
+			MKPinAnnotationView* pinView = (MKPinAnnotationView*)[self.mapView
 																  dequeueReusableAnnotationViewWithIdentifier:@"LastCoord"];
 			
 			if ( !pinView )
 			{
 				// If an existing pin view was not available, create one
-				pinView = [[[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"LastCoord"]
-						   autorelease];
+				pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"LastCoord"];
 				
 				pinView.animatesDrop = YES;
 				pinView.canShowCallout = YES;
@@ -427,14 +422,13 @@
 		else
 		{
 			// Try to dequeue an existing pin view first.
-			annotationView = (MKAnnotationView*)[mapView
+			annotationView = (MKAnnotationView*)[self.mapView
 												 dequeueReusableAnnotationViewWithIdentifier:@"MapCoord"];
 			
 			if (!annotationView)
 			{
 				// If an existing pin view was not available, create one
-				annotationView = [[[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapCoord"]
-								  autorelease];
+				annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"MapCoord"];
 				
 				annotationView.image = [UIImage imageNamed:@"MapCoord.png"];
 				

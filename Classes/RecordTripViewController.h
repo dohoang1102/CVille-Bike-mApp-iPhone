@@ -35,7 +35,7 @@
 #import "PersonalInfoDelegate.h"
 #import "RecordingInProgressDelegate.h"
 #import "TripPurposeDelegate.h"
-
+#import "Coord.h"
 
 @class ReminderManager;
 @class TripManager;
@@ -53,80 +53,33 @@
 	UIActionSheetDelegate,
 	UIAlertViewDelegate,
 	UITextViewDelegate>
-{
-    NSManagedObjectContext *managedObjectContext;
-	
-    CLLocationManager *locationManager;
-	/*
-	UITableViewCell *tripPurposeCell;
-	UITableViewCell *personalInfoCell;
-	*/
-	BOOL				didUpdateUserLocation;
-	IBOutlet MKMapView	*mapView;
-	
-	IBOutlet UIButton *infoButton;
-	IBOutlet UIButton *saveButton;
-	IBOutlet UIButton *startButton;
-	IBOutlet UIButton *lockButton;
-	
-	IBOutlet UILabel *timeCounter;
-	IBOutlet UILabel *distCounter;
-	IBOutlet UILabel *speedCounter;
-	
-	UISlider *slider;
-	UIView   *sliderView;
+    
 
-	NSTimer *timer;
-	
-	// pointer to opacity mask, TabBar view
-	UIView *opacityMask;
-	UIView *parentView;
-	
-	BOOL locked;
-	BOOL recording;
-	BOOL shouldUpdateCounter;
-	BOOL userInfoSaved;
-	
-	TripManager		*tripManager;
-	ReminderManager *reminderManager;
-}
-
-//@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
-
-@property (nonatomic, retain) CLLocationManager *locationManager;
-/*
-@property (nonatomic, retain) UITableViewCell	*tripPurposeCell;
-@property (nonatomic, retain) UITableViewCell	*personalInfoCell;
-*/
-@property (nonatomic, retain) UIButton *infoButton;
-@property (nonatomic, retain) UIButton *saveButton;
-@property (nonatomic, retain) UIButton *startButton;
-@property (nonatomic, retain) UIButton *lockButton;
-
-@property (nonatomic, retain) UILabel *timeCounter;
-@property (nonatomic, retain) UILabel *distCounter;
-
-@property (nonatomic, retain) UISlider *slider;
-@property (nonatomic, retain) UIView   *sliderView;
-
-@property (assign) NSTimer *timer;
-
-@property (nonatomic, retain) UIView   *opacityMask;
-@property (nonatomic, retain) UIView   *parentView;
-
+//@property (nonatomic, strong) UIView   *parentView;
+@property (nonatomic, weak) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) IBOutlet UIButton *saveButton;
+@property (nonatomic, strong) IBOutlet UIButton *startButton;
+@property (nonatomic, strong) IBOutlet UIButton *lockButton;
+@property (nonatomic, strong) IBOutlet UILabel *timeCounter;
+@property (nonatomic, strong) IBOutlet UILabel *distCounter;
+@property (nonatomic, strong) IBOutlet UILabel *speedCounter;
+@property (nonatomic, strong) UISlider *slider;
+@property (nonatomic, strong) UIView   *sliderView;
+@property (nonatomic, weak) NSTimer *timer;
+@property (nonatomic, strong) UIView   *opacityMask;
+@property (nonatomic, strong) Coord   *lasttriplastpoint;
 @property (assign) BOOL locked;
 @property (assign) BOOL recording;
 @property (assign) BOOL shouldUpdateCounter;
 @property (assign) BOOL userInfoSaved;
-
-@property (nonatomic, retain) ReminderManager *reminderManager;
-@property (nonatomic, retain) TripManager *tripManager;
+@property (assign) BOOL didUpdateUserLocation;
+@property (nonatomic, strong) ReminderManager *reminderManager;
+@property (nonatomic, strong) TripManager *tripManager;
+@property (nonatomic, strong) Trip *displayTrip;
 
 - (void)initTripManager:(TripManager*)manager;
-
-// DEPRECATED
-//- (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;
-//- (id)initWithTripManager:(TripManager*)manager;
 
 // IBAction handlers
 - (IBAction)lockAction:(UIButton*)sender;
@@ -139,16 +92,9 @@
 - (void)resetCounter;
 - (void)setCounterTimeSince:(NSDate *)startDate distance:(CLLocationDistance)distance;
 - (void)updateCounter:(NSTimer *)theTimer;
-
-- (UIButton *)createSaveButton;
-- (UIButton *)createStartButton;
-- (UIButton *)createLockButton;
-
 - (void)createOpacityMask;
 - (UISlider *)createSlideToUnlock:(UIView*)view;
-
 - (void)lockDevice;
 - (void)unlockDevice;
-
 
 @end

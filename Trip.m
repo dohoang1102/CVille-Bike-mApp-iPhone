@@ -39,6 +39,7 @@
 @dynamic duration;
 @dynamic notes;
 @dynamic purpose;
+@dynamic mode;
 @dynamic start;
 @dynamic saved;
 @dynamic uploaded;

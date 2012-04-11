@@ -65,7 +65,7 @@
 	BOOL vibrate;
 }
 
-@property (nonatomic, retain) id <RecordingInProgressDelegate> delegate;
+@property (nonatomic, strong) id <RecordingInProgressDelegate> delegate;
 @property (assign) BOOL audible;
 @property (assign) BOOL battery;
 @property (assign) BOOL enabled;
@@ -101,6 +101,7 @@
 		 // just vibrate
 		 AudioServicesPlaySystemSound( kSystemSoundID_Vibrate );
 		 */
+        CFRelease(soundFileURLRef);
 	}
 	
 	if ( battery && delegate )
@@ -140,7 +141,6 @@
 												  cancelButtonTitle:@"OK"
 												  otherButtonTitles:nil];
 			[alert show];
-			[alert release];
 			
 			// note this in saved data?
 			// exit app?
@@ -197,7 +197,7 @@
 	if ( self = [super init] )
 	{
 		//NSLog(@"ReminderManager init");
-		reminders = [[NSMutableArray arrayWithCapacity:10] retain];
+		reminders = [NSMutableArray arrayWithCapacity:10];
 		
 		// add reminders here
 		if ( kEnableTestReminder )

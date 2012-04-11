@@ -35,7 +35,10 @@
 
 @implementation PickerViewController
 
-@synthesize customPickerView, customPickerDataSource, delegate, description;
+@synthesize customPickerView = _customPickerView;
+@synthesize customPickerDataSource = _customPickerDataSource;
+@synthesize vcdelegate = _vcdelegate;
+@synthesize description = _description;
 
 
 // return the picker frame based on its size
@@ -63,45 +66,78 @@
 
 - (void)createCustomPicker
 {
-	customPickerView = [[UIPickerView alloc] initWithFrame:CGRectZero];
-	customPickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	self.customPickerView = [[UIPickerView alloc] initWithFrame:CGRectZero];
+	self.customPickerView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	
 	// setup the data source and delegate for this picker
-	customPickerDataSource = [[CustomPickerDataSource alloc] init];
-	customPickerDataSource.parent = self;
-	customPickerView.dataSource = customPickerDataSource;
-	customPickerView.delegate = customPickerDataSource;
+	self.customPickerDataSource = [[CustomPickerDataSource alloc] init];
+	self.customPickerDataSource.parent = self;
+	self.customPickerView.dataSource = self.customPickerDataSource;
+	self.customPickerView.delegate = self.customPickerDataSource;
 	
 	// note we are using CGRectZero for the dimensions of our picker view,
 	// this is because picker views have a built in optimum size,
 	// you just need to set the correct origin in your view.
 	//
 	// position the picker at the bottom
-	CGSize pickerSize = [customPickerView sizeThatFits:CGSizeZero];
-	customPickerView.frame = [self pickerFrameWithSize:pickerSize];
+	CGSize pickerSize = [self.customPickerView sizeThatFits:CGSizeZero];
+	self.customPickerView.frame = [self pickerFrameWithSize:pickerSize];
 	
-	customPickerView.showsSelectionIndicator = YES;
+	self.customPickerView.showsSelectionIndicator = YES;
 	
 	// add this picker to our view controller, initially hidden
 	//customPickerView.hidden = YES;
-	[self.view addSubview:customPickerView];
+	[self.view addSubview:self.customPickerView];
 }
 
 
 - (IBAction)cancel:(id)sender
 {
-	[delegate didCancelPurpose];
+	[self.vcdelegate didCancelPurpose];
 }
 
 
 - (IBAction)save:(id)sender
 {
-	NSInteger row = [customPickerView selectedRowInComponent:0];
-	[delegate didPickPurpose:row];
+	NSInteger row = [self.customPickerView selectedRowInComponent:0];
+    NSInteger row1 = [self.customPickerView selectedRowInComponent:1];
+	[self.vcdelegate didPickPurpose:row didPickMode:row1];
+}
+
+- (id)init {
+    //NSLog(@"in PickerViewController:init");
+    self = [super init];
+    if (self) {
+        [self createCustomPicker];
+        
+        // picker defaults to top-most item => update the description
+        [self pickerView:self.customPickerView didSelectRow:0 inComponent:0];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    //NSLog(@"in PickerViewController:initWithCoder");
+    if ((self = [super initWithCoder:aDecoder])) {
+        
+       // [self createCustomPicker];
+        
+        // picker defaults to top-most item => update the description
+        //[self pickerView:customPickerView didSelectRow:0 inComponent:0];
+    }
+    
+    return self;
+}
+
+- (void)awakeFromNib {
+    //NSLog(@"in awakeFromNib...");
+    [self createCustomPicker];
+    [self pickerView:self.customPickerView didSelectRow:0 inComponent:0];
 }
 
 
-- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
+
+/*- (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
 {
 	NSLog(@"initWithNibNamed");
 	if (self = [super initWithNibName:nibName bundle:nibBundle])
@@ -113,7 +149,7 @@
 		[self pickerView:customPickerView didSelectRow:0 inComponent:0];
 	}
 	return self;
-}
+}*/
 
 
 - (id)initWithPurpose:(NSInteger)index
@@ -123,10 +159,10 @@
 		//NSLog(@"PickerViewController initWithPurpose: %d", index);
 		
 		// update the picker
-		[customPickerView selectRow:index inComponent:0 animated:YES];
+		[self.customPickerView selectRow:index inComponent:0 animated:YES];
 		
 		// update the description
-		[self pickerView:customPickerView didSelectRow:index inComponent:0];
+		[self pickerView:self.customPickerView didSelectRow:index inComponent:0];
 	}
 	return self;
 }
@@ -136,7 +172,9 @@
 {		
 	[super viewDidLoad];
 	
-	self.title = NSLocalizedString(@"Trip Purpose", @"");
+    //NSLog(@"in PickerViewController:viewDidLoad...");
+    
+	self.title = NSLocalizedString(@"Purpose/Weather", @"");
 
 	//self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	// self.view.backgroundColor = [[UIColor alloc] initWithRed:40. green:42. blue:57. alpha:1. ];
@@ -151,10 +189,10 @@
 	//[self.navigationController setNavigationBarHidden:NO animated:YES];
 	
 	//description = [[UITextView alloc] initWithFrame:CGRectMake( 18.0, 280.0, 284.0, 130.0 )];
-	description = [[UITextView alloc] initWithFrame:CGRectMake( 18.0, 314.0, 284.0, 120.0 )];
-	description.editable = NO;
-	description.font = [UIFont fontWithName:@"Arial" size:16];
-	[self.view addSubview:description];
+	self.description = [[UITextView alloc] initWithFrame:CGRectMake( 18.0, 314.0, 284.0, 120.0 )];
+	self.description.editable = NO;
+	self.description.font = [UIFont fontWithName:@"Arial" size:16];
+	[self.view addSubview:self.description];
 }
 
 
@@ -170,13 +208,6 @@
 }
 
 
-- (void)dealloc
-{
-	[customPickerDataSource release];
-	[customPickerView release];
-	
-	[super dealloc];
-}
 
 
 #pragma mark UIPickerViewDelegate
@@ -186,31 +217,34 @@
 {
 	//NSLog(@"parent didSelectRow: %d inComponent:%d", row, component);
 
+    if (component != 0)
+        return;
+    
 	switch (row) {
 		case 0:
-			description.text = kDescCommute;
+			self.description.text = kDescSchool;
 			break;
 		case 1:
-			description.text = kDescSchool;
+			self.description.text = kDescCommute;
 			break;
 		case 2:
-			description.text = kDescWork;
+			self.description.text = kDescWork;
 			break;
 		case 3:
-			description.text = kDescExercise;
+			self.description.text = kDescExercise;
 			break;
 		case 4:
-			description.text = kDescSocial;
+			self.description.text = kDescSocial;
 			break;
 		case 5:
-			description.text = kDescShopping;
+			self.description.text = kDescShopping;
 			break;
 		case 6:
-			description.text = kDescErrand;
+			self.description.text = kDescErrand;
 			break;
 		case 7:
 		default:
-			description.text = kDescOther;
+			self.description.text = kDescOther;
 			break;
 	}
 }

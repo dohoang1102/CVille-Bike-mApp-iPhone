@@ -34,7 +34,7 @@
 
 @synthesize title, image;
 
-const CGFloat kViewWidth = 200;
+const CGFloat kViewWidth = 150;
 const CGFloat kViewHeight = 44;
 
 + (CGFloat)viewWidth
@@ -66,7 +66,7 @@ const CGFloat kViewHeight = 44;
 	[self.image drawAtPoint:point];
 	
 	yCoord = (self.bounds.size.height - MAIN_FONT_SIZE) / 2;
-	point = CGPointMake(10.0 + self.image.size.width + 10.0, yCoord);
+	point = CGPointMake(10.0 + 10.0, yCoord);
 	[self.title drawAtPoint:point
 					forWidth:self.bounds.size.width
 					withFont:[UIFont systemFontOfSize:MAIN_FONT_SIZE]
@@ -76,12 +76,5 @@ const CGFloat kViewHeight = 44;
 					baselineAdjustment:UIBaselineAdjustmentAlignBaselines];
 }
 
-- (void)dealloc
-{
-	[title release];
-	[image release];
-	
-	[super dealloc];
-}
 
 @end

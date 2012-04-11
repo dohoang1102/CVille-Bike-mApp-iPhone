@@ -29,8 +29,9 @@
 //	e-mail Billy Charlton at the SFCTA <billy.charlton@sfcta.org>
 
 
-#define kTripPurposeCommute		0
-#define kTripPurposeSchool		1
+
+#define kTripPurposeSchool		0
+#define kTripPurposeCommute		1
 #define kTripPurposeWork		2
 #define kTripPurposeExercise	3
 #define kTripPurposeSocial		4
@@ -47,14 +48,53 @@
 #define kTripPurposeErrandIcon		@"errands.tif"
 #define kTripPurposeOtherIcon		@"other.tif"
 
-#define kTripPurposeCommuteString	@"Commute"
-#define kTripPurposeSchoolString	@"School"
-#define kTripPurposeWorkString		@"Work-Related"
+/*
+ * Class
+ * Home/Dorm
+ * Work
+ * School-related
+ * Social/Rec.
+ * Shopping
+ * Errand
+ * Other
+ */
+
+#define kTripPurposeSchoolString	@"Class"
+#define kTripPurposeCommuteString	@"Home/Dorm"
+#define kTripPurposeWorkString		@"Work"
 #define kTripPurposeExerciseString	@"Exercise"
-#define kTripPurposeSocialString	@"Social"
+#define kTripPurposeSocialString	@"Social/Rec."
 #define kTripPurposeShoppingString	@"Shopping"
 #define kTripPurposeErrandString	@"Errand"
 #define kTripPurposeOtherString		@"Other"
+
+/*
+ * Walk
+ * Bike
+ * MotorBike
+ * Carpool
+ * Bus
+ * Car
+ * Other
+ */
+/*#define kTripModeCommuteString	@"Walk"
+#define kTripModeSchoolString	@"Bike"
+#define kTripModeWorkString		@"Motorbike"
+#define kTripModeExerciseString	@"Carpool"
+#define kTripModeSocialString	@"Bus"
+#define kTripModeShoppingString	@"Car"
+#define kTripModeOtherString	@"Other"
+*/
+ 
+#define kTripWeatherSunny 0
+#define kTripWeatherRaining 1
+#define kTripWeatherSnowing 2
+#define kTripWeatherOther 3
+
+#define kTripWeatherSunnyString @"Sunny"
+#define kTripWeatherRainingString @"Raining"
+#define kTripWeatherSnowingString @"Snowing"
+#define kTripWeatherOtherString @"Other"
 
 
 @protocol TripPurposeDelegate <NSObject>
@@ -62,9 +102,12 @@
 @required
 - (NSString *)getPurposeString:(unsigned int)index;
 - (NSString *)setPurpose:(unsigned int)index;
+- (NSString *)getModeString:(unsigned int)index;
+- (NSString *)setMode:(unsigned int)index;
+
 
 @optional
 - (void)didCancelPurpose;
-- (void)didPickPurpose:(unsigned int)index;
+- (void)didPickPurpose:(NSInteger)index didPickMode:(NSInteger)index1 ;
 
 @end

@@ -36,14 +36,27 @@
 {
 }
 
-@property (nonatomic, retain) NSString * age;
-@property (nonatomic, retain) NSString * email;
-@property (nonatomic, retain) NSString * gender;
-@property (nonatomic, retain) NSNumber * cyclingFreq;
-@property (nonatomic, retain) NSString * schoolZIP;
-@property (nonatomic, retain) NSString * workZIP;
-@property (nonatomic, retain) NSString * homeZIP;
-@property (nonatomic, retain) NSSet* trips;
+@property (nonatomic, strong) NSString * age;
+@property (nonatomic, strong) NSString * email;
+@property (nonatomic, strong) NSString * gender;
+@property (nonatomic, strong) NSNumber * cyclingFreq;
+@property (nonatomic, strong) NSString * schoolZIP;
+@property (nonatomic, strong) NSString * workZIP;
+@property (nonatomic, strong) NSString * homeZIP;
+@property (nonatomic, strong) NSString * ownacar;
+@property (nonatomic, strong) NSString * enterdrawing;
+@property (nonatomic, strong) NSString * liveoncampus;
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * hasaccepted;
+@property (nonatomic, strong) NSString * hasenteredvalidinfo;
+@property (nonatomic, strong) NSNumber * lastendlat;
+@property (nonatomic, strong) NSNumber * lastendlong;
+@property (nonatomic, strong) NSSet* trips;
+
+
+@property (nonatomic, strong) NSString * cyclingLevel;
+@property (nonatomic, strong) NSString * uvaAffiliated;
+@property (nonatomic, strong) NSString * uvaClassification;
 
 @end
 

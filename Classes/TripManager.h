@@ -43,69 +43,47 @@
 TripPurposeDelegate, 
 UIAlertViewDelegate, 
 UITextViewDelegate>
-{
-	id <ActivityIndicatorDelegate> activityDelegate;
-	id <UIAlertViewDelegate> alertDelegate;
+@property (nonatomic, strong) id <ActivityIndicatorDelegate> activityDelegate;
+@property (nonatomic, strong) id <UIAlertViewDelegate> alertDelegate;
 
-	UIActivityIndicatorView *activityIndicator;
-	UIAlertView *saving;
-	UIAlertView *tripNotes;
-	UITextView	*tripNotesText;
-
-	BOOL dirty;
-	Trip *trip;
-	CLLocationDistance distance;
-	NSInteger purposeIndex;
-	
-	NSMutableArray *coords;
-    NSManagedObjectContext *managedObjectContext;
-
-	NSMutableData *receivedData;
-	
-	NSMutableArray *unSavedTrips;
-	NSMutableArray *unSyncedTrips;
-	NSMutableArray *zeroDistanceTrips;
-}
-
-
-@property (nonatomic, retain) id <ActivityIndicatorDelegate> activityDelegate;
-@property (nonatomic, retain) id <UIAlertViewDelegate> alertDelegate;
-
-@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, retain) UIAlertView *saving;
-@property (nonatomic, retain) UIAlertView *tripNotes;
-@property (nonatomic, retain) UITextView *tripNotesText;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) UIAlertView *saving;
+@property (nonatomic, strong) UIAlertView *tripNotes;
+@property (nonatomic, strong) UITextView *tripNotesText;
 
 @property (assign) BOOL dirty;
-@property (nonatomic, retain) Trip *trip;
+@property (nonatomic, strong) Trip *trip;
 
-@property (nonatomic, retain) NSMutableArray *coords;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSMutableArray *coords;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic, retain) NSMutableData *receivedData;
+@property (nonatomic, strong) NSMutableData *receivedData;
+@property (assign) NSInteger purposeIndex;
+@property (assign) NSInteger modeIndex;
+@property(assign) CLLocationDistance distance;
+
+//@property(nonatomic, strong) NSMutableArray *unSavedTrips;
+//@property(nonatomic, strong) NSMutableArray *unSyncedTrips;
+//@property(nonatomic, strong) NSMutableArray *zeroDistanceTrips;
 
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;
 - (id)initWithTrip:(Trip*)trip;
 - (BOOL)loadTrip:(Trip*)trip;
-
 - (void)createTrip;
+- (bool)checkForInit;
 - (void)createTrip:(unsigned int)index;
-
 - (CLLocationDistance)addCoord:(CLLocation*)location;
+- (void)addLastUsedCoord;
 - (void)saveNotes:(NSString*)notes;
 - (void)saveTrip;
-
 - (CLLocationDistance)getDistanceEstimate;
-
 - (NSInteger)getPurposeIndex;
-
+- (NSInteger)getModeIndex;
 - (void)promptForTripNotes;
-
 - (int)countUnSavedTrips;
 - (int)countUnSyncedTrips;
 - (int)countZeroDistanceTrips;
-
 - (BOOL)loadMostRecetUnSavedTrip;
 - (int)recalculateTripDistances;
 - (CLLocationDistance)calculateTripDistance:(Trip*)_trip;
@@ -117,6 +95,8 @@ UITextViewDelegate>
 
 + (unsigned int)getPurposeIndex:(NSString*)string;
 + (NSString *)getPurposeString:(unsigned int)index;
++ (unsigned int)getModeIndex:(NSString*)string;
++ (NSString *)getModeString:(unsigned int)index;
 
 @end
 

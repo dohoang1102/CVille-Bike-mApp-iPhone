@@ -29,13 +29,20 @@
 //	e-mail Billy Charlton at the SFCTA <billy.charlton@sfcta.org>
 
 #import "constants.h"
-#import "CycleTracksAppDelegate.h"
+#import "CVilleRidesAppDelegate.h"
 #import "SaveRequest.h"
 
 
 @implementation SaveRequest
+{
+	//NSMutableURLRequest *request;
+	//NSString *deviceUniqueIdHash;
+	//NSMutableDictionary *postVars;
+}
 
-@synthesize request, deviceUniqueIdHash, postVars;
+@synthesize request = _request;
+@synthesize deviceUniqueIdHash = _deviceUniqueIdHash;
+@synthesize postVars = _postVars;
 
 #pragma mark init
 
@@ -44,7 +51,7 @@
 	if (self = [super init])
 	{
 		// Nab the unique device id hash from our delegate.
-		CycleTracksAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+		CVilleRidesAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 		self.deviceUniqueIdHash = delegate.uniqueIDHash;
 		
 		// create request.
@@ -52,35 +59,28 @@
 		// [request addValue:kServiceUserAgent forHTTPHeaderField:@"User-Agent"];
 
 		// setup POST vars
-		[request setHTTPMethod:@"POST"];
+		[self.request setHTTPMethod:@"POST"];
 		self.postVars = [NSMutableDictionary dictionaryWithDictionary:inPostVars];
 	
 		// add hash of device id
-		[postVars setObject:deviceUniqueIdHash forKey:@"device"];
+		[self.postVars setObject:self.deviceUniqueIdHash forKey:@"device"];
 
 		// convert dict to string
 		NSMutableString *postBody = [NSMutableString string];
 
-		for(NSString * key in postVars)
-			[postBody appendString:[NSString stringWithFormat:@"%@=%@&", key, [postVars objectForKey:key]]];
+		for(NSString * key in self.postVars)
+			[postBody appendString:[NSString stringWithFormat:@"%@=%@&", key, [self.postVars objectForKey:key]]];
 
 		NSLog(@"initializing HTTP POST request to %@ with %d bytes", 
 			  kSaveURL,
 			  [[postBody dataUsingEncoding:NSUTF8StringEncoding] length]);
-		[request setHTTPBody:[postBody dataUsingEncoding:NSUTF8StringEncoding]];
+        NSLog(@"body: %@", postBody);
+		[self.request setHTTPBody:[postBody dataUsingEncoding:NSUTF8StringEncoding]];
 	}
 	
 	return self;
 }
 
-- (void)dealloc
-{
-	[super dealloc];
-	
-	[postVars release];
-	[request release];
-	[deviceUniqueIdHash release];
-}
 
 #pragma mark instance methods
 
@@ -88,8 +88,8 @@
 - (NSURLConnection *)getConnectionWithDelegate:(id)delegate
 {
 	
-	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:delegate];
-	return [conn autorelease];
+	NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:self.request delegate:delegate];
+	return conn;
 }
 
 @end

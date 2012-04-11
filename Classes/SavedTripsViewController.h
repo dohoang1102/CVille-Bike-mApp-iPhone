@@ -47,24 +47,24 @@
 	NSMutableArray *trips;
     NSManagedObjectContext *managedObjectContext;
 	
-	id <RecordingInProgressDelegate> delegate;
+	id <RecordingInProgressDelegate> ripdelegate;
 	TripManager *tripManager;
 	Trip *selectedTrip;
 	
 	LoadingView *loading;
 }
 
-@property (nonatomic, retain) NSMutableArray *trips;
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) NSMutableArray *trips;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
-@property (nonatomic, retain) id <RecordingInProgressDelegate> delegate;
-@property (nonatomic, retain) TripManager *tripManager;
-@property (nonatomic, retain) Trip *selectedTrip;
+@property (nonatomic, strong) id <RecordingInProgressDelegate> ripdelegate;
+@property (nonatomic, strong) TripManager *tripManager;
+@property (nonatomic, strong) Trip *selectedTrip;
 
 - (void)initTripManager:(TripManager*)manager;
 
 // DEPRECATED
-- (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;
-- (id)initWithTripManager:(TripManager*)manager;
+//- (id)initWithManagedObjectContext:(NSManagedObjectContext*)context;
+//- (id)initWithTripManager:(TripManager*)manager;
 
 @end

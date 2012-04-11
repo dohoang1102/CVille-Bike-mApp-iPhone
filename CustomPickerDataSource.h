@@ -30,22 +30,35 @@
 
 
 // Trip Purpose descriptions
-#define kDescCommute	@"The primary reason for this bike trip is to get between home and your primary work location."
-#define kDescSchool		@"The primary reason for this bike trip is to go to or from school or college."
-#define kDescWork		@"The primary reason for this bike trip is to go to or from business-related meeting, function, or work-related errand for your job."
-#define kDescExercise	@"The primary reason for this bike trip is exercise or biking for the sake of biking."
-#define kDescSocial		@"The primary reason for this bike trip is going to or from a social activity (e.g. at a friend's house, the park, a restaurant, the movies)."
-#define kDescShopping	@"The primary reason for this bike trip is to purchase or bring home goods or groceries."
-#define kDescErrand		@"The primary reason for this bike trip is to attend to personal business such as banking, doctor visit, going to the gym, etc."
-#define kDescOther		@"If none of the other reasons apply to this trip, you can enter trip comments after saving your trip to tell us more."
+#define kDescCommute	@"The primary reason for this trip is going to or from the location where you live."
+
+
+#define kDescSchool		@"The primary reason for this trip is going to or from a class."
+
+#define kDescWork		@"The primary reason for this trip is going to or from the location where you are employed, if you are employed."
+
+#define kDescExercise	@"The primary reason for this trip is exercise."
+
+#define kDescSocial		@"The primary reason for this trip is social (e.g., visiting a friend)."
+
+#define kDescShopping	@"The primary reason for this trip is go to a retail store to buy something (e.g. food, soda, clothes, books, etc)."
+
+#define kDescErrand		@"The primary reason for this trip can be anything where a service is sought such as a bank errand or a doctor's appointment."
+
+#define kDescOther		@"The primary reason for this trip is anything not related to any of the above categories.  When in doubt, specify it below and tell us the reason for the trip."
+
+
 
 @interface CustomPickerDataSource : NSObject <UIPickerViewDataSource, UIPickerViewDelegate>
 {
-	NSArray	*customPickerArray;
+	NSArray	*customPickerArray; 
+    NSArray *modePickerArray;
 	id<UIPickerViewDelegate> parent;
 }
 
-@property (nonatomic, retain) NSArray *customPickerArray;
-@property (nonatomic, retain) id<UIPickerViewDelegate> parent;
+@property (nonatomic, strong) NSArray *customPickerArray;
+@property (nonatomic, strong) NSArray *modePickerArray;
+
+@property (nonatomic, strong) id<UIPickerViewDelegate> parent;
 
 @end

@@ -32,15 +32,9 @@
 
 
 @interface SaveRequest : NSObject
-{
-	NSMutableURLRequest *request;
-	NSString *deviceUniqueIdHash;
-	NSMutableDictionary *postVars;
-}
-
-@property (nonatomic, retain) NSMutableURLRequest *request;
-@property (nonatomic, retain) NSMutableDictionary *postVars;
-@property (nonatomic, retain) NSString *deviceUniqueIdHash;
+@property (nonatomic, strong) NSMutableURLRequest *request;
+@property (nonatomic, strong) NSMutableDictionary *postVars;
+@property (nonatomic, strong) NSString *deviceUniqueIdHash;
 
 - initWithPostVars:(NSDictionary *)inPostVars;
 

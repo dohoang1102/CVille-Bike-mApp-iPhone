@@ -33,7 +33,7 @@
 
 + (id)serializer
 {
-return([[[self alloc] init] autorelease]);
+return([[self alloc] init]);
 }
 
 - (NSString *)serializeObject:(id)inObject;
@@ -62,7 +62,7 @@ else if ([inObject isKindOfClass:[NSDictionary class]])
 	}
 else if ([inObject isKindOfClass:[NSData class]])
 	{
-	NSString *theString = [[[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding] autorelease];
+	NSString *theString = [[NSString alloc] initWithData:inObject encoding:NSUTF8StringEncoding];
 	theResult = [self serializeString:theString];
 	}
 else
@@ -83,7 +83,7 @@ return(@"null");
 - (NSString *)serializeNumber:(NSNumber *)inNumber
 {
 NSString *theResult = NULL;
-switch (CFNumberGetType((CFNumberRef)inNumber))
+switch (CFNumberGetType((__bridge CFNumberRef)inNumber))
 	{
 	case kCFNumberCharType:
 		{
@@ -109,8 +109,9 @@ switch (CFNumberGetType((CFNumberRef)inNumber))
 	case kCFNumberFloatType:
 	case kCFNumberDoubleType:
 	case kCFNumberCFIndexType:
-	default:
+    default: {
 		theResult = [inNumber stringValue];
+        }
 		break;
 	}
 return(theResult);
@@ -118,7 +119,7 @@ return(theResult);
 
 - (NSString *)serializeString:(NSString *)inString
 {
-NSMutableString *theMutableCopy = [[inString mutableCopy] autorelease];
+NSMutableString *theMutableCopy = [inString mutableCopy];
 [theMutableCopy replaceOccurrencesOfString:@"\\" withString:@"\\\\" options:0 range:NSMakeRange(0, [theMutableCopy length])];
 [theMutableCopy replaceOccurrencesOfString:@"\"" withString:@"\\\"" options:0 range:NSMakeRange(0, [theMutableCopy length])];
 [theMutableCopy replaceOccurrencesOfString:@"/" withString:@"\\/" options:0 range:NSMakeRange(0, [theMutableCopy length])];

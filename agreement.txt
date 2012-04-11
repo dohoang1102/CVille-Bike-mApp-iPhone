@@ -1,0 +1,74 @@
+Welcome to CVille Bike mApp! 
+
+CVille Bike mApp Legal Agreement
+
+Introduction
+
+BikeCharlottesville and the Thomas Jefferson Planning District Commission (TJPDC) are working together on CVille Bike mApp. The purpose of this project is to gather data on how cyclists move through the transportation system in the Charlottesville-Albemarle region. Key questions include:
+
+- What routes are most used by cyclists?
+- What routes are not used cyclists?
+- What are the critical gaps in bicycle facilities?
+
+The data collected will be used to guide the planning process to improve the transportation system for cyclists through the Metropolitan Planning Organization's Long Range Transportation Plan.
+
+What will I be asked to do?
+
+If you agree to participate, you will be asked to record your cycling trips using an iPhone.
+
+Legal Disclaimer
+
+The Thomas Jefferson Planning District Commission (TJPDC) has developed this application for the sole purpose of collecting better data to implement more precise and useful transportation planning. By pressing the proceed button you are agreeing to participate in this data collection initiative. The TJPDC is not responsible for any incidents that might occur while participating in this initiative, including injury, damage to personal property, damage to the property of others, or any other events that could occur while using this application.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL TJPDC, THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABIILTY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Privacy Policy
+
+Your privacy is very important to us. We have developed this policy in order for you to understand how we collect, use, communicate, disclose and make use of personal information. The following outlines our privacy policy.
+
+Before or at the time of collecting personal information, we will identify the purposes for which information is being collected.
+We will collect and use personal information solely with the objective of fulfilling those purposes specified by us and for other compatible purposes, unless we obtain the consent of the individual concerned or as required by law.
+We will only retain personal information as long as necessary for the fulfillment of those purposes.
+We will collect personal information by lawful and fair means and, where appropriate, with the knowledge or consent of the individual concerned.
+Personal data should be relevant to the purposes for which it is to be used, and, to the extent necessary for those purposes, should be accurate, complete, and up-to-date.
+We will protect personal information by reasonable security safeguards against loss or theft, as well as unauthorized access, disclosure, copying, use, or modification.
+We will make readily available to customers information about our policies and practices relating to the management of personal information.
+We are committed to conducting our organization in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.
+
+Terms and Conditions, Privacy Policy, and Legal Disclaimer are subject to change at any time.
+
+Directions
+
+Please be sure you have read the above information and clarified any questions or concerns you may have.
+
+The app can be downloaded at the Apple iTunes App Store. If you have any questions, contact us at info@tjpdc.org.
+
+Use CVille Bike mApp to record all the trips you take throughout the day on your bicycle. A trip is defined as a movement between two places. For example, if you leave your home, stop at a coffee shop, then go to work, you have completed 2 trips - (1) from home to the coffee shop and (2) from the coffee shop to work. You should start recording a new trip when you depart one location and end that trip when you arrive at your destination (and start a new trip when you leave there!).
+
+The first time you use the app, you'll be asked to respond to the general information questions below. Every time you record a trip, you'll be asked the trip questions below. A trip is not submitted unless you press the submit button. All trips are recorded in your phone so you can review your daily trips.
+
+There will be an audible reminder every 5 minutes to indicate that the App is still in use as sleep mode will be temporarily disabled. When recording trips, do not turn off your phone's screen. Simply leave the lock screen on until you reach your destination. This is neccessary in order to collect GPS data.
+
+Whom do I contact with questions about the study?
+
+If you have questions regarding this study, you may contact Sarah Rhodes at 434-979-7310 ext. 360 or srhodes@tjpdc.org.
+
+General Information Questions (Answer Once)
+
+Rate yourself as a cyclist? Advanced, Intermediate, Beginner.
+Are you affiliated with the University of Virginia? Yes or No 
+a. If yes, how? Student, Faculty, Staff
+Information for drawing: Please enter your information below if you would like to participate in a drawing to win gift cards from local bike shops. Participants who submit 10 trips will be entered into the drawing.
+
+Enter Drawing? Yes or No 
+a. If yes, 
+i. Name 
+ii. Email
+Trip Questions (Answer Each Trip)
+
+Trip Type: Commute for Work/School, Recreation/Exercise, Shopping/Errand, Social, Personal Business, Other
+
+a. If other, please comment.
+What is the weather like? Sunny, Overcast, Raining, Snowing, Other
+
+b. If other, please comment.

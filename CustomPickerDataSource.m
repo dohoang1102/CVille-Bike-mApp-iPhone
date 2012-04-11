@@ -34,7 +34,7 @@
 
 @implementation CustomPickerDataSource
 
-@synthesize customPickerArray, parent;
+@synthesize customPickerArray, parent, modePickerArray;
 
 - (id)init
 {
@@ -46,11 +46,11 @@
 		NSMutableArray *viewArray = [[NSMutableArray alloc] init];
 
 		/*
-		 * Commute
-		 * School
-		 * Work-Related
-		 * Exercise
-		 * Social
+		 * Class
+		 * Home/Dorm
+		 * Work
+		 * School-related
+		 * Social/Rec.
 		 * Shopping
 		 * Errand
 		 * Other
@@ -58,64 +58,114 @@
 		
 		CustomView *view;
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Commute";
-		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		//view.title = @"Class";
+        view.title = kTripPurposeSchoolString;
+//		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
 		[viewArray addObject:view];
-		[view release];
 		
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"School";
-		view.image = [UIImage imageNamed:kTripPurposeSchoolIcon];
+		//view.title = @"Home/Dorm";
+        view.title = kTripPurposeCommuteString;
+//		view.image = [UIImage imageNamed:kTripPurposeSchoolIcon];
 		[viewArray addObject:view];
-		[view release];
 		
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Work-Related";
-		view.image = [UIImage imageNamed:kTripPurposeWorkIcon];
+		view.title = kTripPurposeWorkString;
+//		view.image = [UIImage imageNamed:kTripPurposeWorkIcon];
 		[viewArray addObject:view];
-		[view release];
+		
+		/*view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"School-related";
+//		view.image = [UIImage imageNamed:kTripPurposeExerciseIcon];
+		[viewArray addObject:view];
+		*/
+        
+        view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = kTripPurposeExerciseString;
+        //		view.image = [UIImage imageNamed:kTripPurposeSocialIcon];
+		[viewArray addObject:view];
+         
+		view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = kTripPurposeSocialString;
+//		view.image = [UIImage imageNamed:kTripPurposeSocialIcon];
+		[viewArray addObject:view];
 		
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Exercise";
-		view.image = [UIImage imageNamed:kTripPurposeExerciseIcon];
+		view.title = kTripPurposeShoppingString;
+//		view.image = [UIImage imageNamed:kTripPurposeShoppingIcon];
 		[viewArray addObject:view];
-		[view release];
 		
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Social";
-		view.image = [UIImage imageNamed:kTripPurposeSocialIcon];
+		view.title = kTripPurposeErrandString;
+//		view.image = [UIImage imageNamed:kTripPurposeErrandIcon];
 		[viewArray addObject:view];
-		[view release];
 		
 		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Shopping";
-		view.image = [UIImage imageNamed:kTripPurposeShoppingIcon];
+		view.title = kTripPurposeOtherString;
+//		view.image = [UIImage imageNamed:kTripPurposeOtherIcon];
 		[viewArray addObject:view];
-		[view release];
-		
-		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Errand";
-		view.image = [UIImage imageNamed:kTripPurposeErrandIcon];
-		[viewArray addObject:view];
-		[view release];
-		
-		view = [[CustomView alloc] initWithFrame:CGRectZero];
-		view.title = @"Other";
-		view.image = [UIImage imageNamed:kTripPurposeOtherIcon];
-		[viewArray addObject:view];
-		[view release];
 
 		self.customPickerArray = viewArray;
-		[viewArray release];
+
+
+
+        
+        /*
+		 * Walk
+		 * Bike
+		 * Motorbike
+		 * Carpool
+		 * Bus
+		 * Car
+		 * Other
+		 */
+        
+        NSMutableArray *modesArray = [[NSMutableArray alloc] init];
+        
+		view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Sunny";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+		
+		view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Raining";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        
+        view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Snowing";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        
+        view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Other";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        
+        /*view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Bus";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        
+        
+        view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Car";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        
+        view = [[CustomView alloc] initWithFrame:CGRectZero];
+		view.title = @"Other";
+        //		view.image = [UIImage imageNamed:kTripPurposeCommuteIcon];
+		[modesArray addObject:view];
+        */
+        
+		self.modePickerArray = modesArray;
+        
+        
 	}
 	return self;
 }
 
-- (void)dealloc
-{
-	[customPickerArray release];
-	[super dealloc];
-}
 
 
 #pragma mark UIPickerViewDataSource
@@ -133,12 +183,15 @@
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-	return [customPickerArray count];
+    if (component == 0)
+        return [customPickerArray count];
+    else 
+        return [modePickerArray count];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-	return 1;
+	return 2;
 }
 
 
@@ -149,7 +202,10 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row
 		  forComponent:(NSInteger)component reusingView:(UIView *)view
 {
-	return [customPickerArray objectAtIndex:row];
+    if (component == 0)
+        return [customPickerArray objectAtIndex:row];
+    else
+        return [modePickerArray objectAtIndex:row];
 }
 
 

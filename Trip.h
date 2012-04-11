@@ -36,16 +36,17 @@
 {
 }
 
-@property (nonatomic, retain) NSSet *coords;
-@property (nonatomic, retain) NSNumber *distance;
-@property (nonatomic, retain) NSNumber *duration;
+@property (nonatomic, strong) NSSet *coords;
+@property (nonatomic, strong) NSNumber *distance;
+@property (nonatomic, strong) NSNumber *duration;
 
-@property (nonatomic, retain) NSString *notes;
-@property (nonatomic, retain) NSString *purpose;
+@property (nonatomic, strong) NSString *notes;
+@property (nonatomic, strong) NSString *purpose;
+@property (nonatomic, strong) NSString *mode;
 
-@property (nonatomic, retain) NSDate *start;
-@property (nonatomic, retain) NSDate *saved;
-@property (nonatomic, retain) NSDate *uploaded;
+@property (nonatomic, strong) NSDate *start;
+@property (nonatomic, strong) NSDate *saved;
+@property (nonatomic, strong) NSDate *uploaded;
 
 @end
 

@@ -42,5 +42,18 @@
 @dynamic workZIP;
 @dynamic homeZIP;
 @dynamic trips;
+@dynamic ownacar;
+@dynamic liveoncampus;
+@dynamic enterdrawing;
+@dynamic name;
+@dynamic hasaccepted;
+@dynamic hasenteredvalidinfo;
+@dynamic lastendlat;
+@dynamic lastendlong;
+
+@dynamic uvaClassification;
+@dynamic cyclingLevel;
+@dynamic uvaAffiliated;
+
 
 @end
